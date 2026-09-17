@@ -95,6 +95,7 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
             InfoSection(label = "Edad", value = "19 años")
             InfoSection(label = "Correo", value = "srojas20unab.edu.co")
             InfoSection(label = "Ciudad", value = "Bucaramanga")
+            InfoSection(label = "Descripcion", value = "Estudiante de ingeniería de sistemas de cuarto semestre y me gustan los sistemas y desarrollos moviles, videojuegos etc.")
         }
 
         Text(
