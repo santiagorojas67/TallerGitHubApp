@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -60,6 +61,42 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
                 .clip(CircleShape)
         )
 
+        Column(
+            modifier = Modifier
+                .padding(vertical = 8.dp)
+                .border(1.dp, Color.Gray, RoundedCornerShape(8.dp))
+                .padding(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "Santiago Rojas",
+                textAlign = TextAlign.Center,
+                fontSize = 16.sp,
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                fontStyle = FontStyle.Italic
+            )
+
+            Text(
+                text = "Desarrollador Movil Jr.",
+                textAlign = TextAlign.Center,
+                fontSize = 16.sp,
+                color = Color.Blue,
+                fontStyle = FontStyle.Italic
+            )
+        }
+
+        Column(
+            modifier = Modifier
+                .padding(vertical = 8.dp)
+                .border(1.dp, Color.LightGray, RoundedCornerShape(4.dp))
+                .padding(8.dp)
+        ) {
+            InfoSection(label = "Edad", value = "19 años")
+            InfoSection(label = "Correo", value = "srojas20unab.edu.co")
+            InfoSection(label = "Ciudad", value = "Bucaramanga")
+        }
+
         Text(
             text = "Contactar",
             textAlign = TextAlign.Center,
@@ -72,6 +109,32 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+@Composable
+fun InfoSection(label: String, value: String) {
+    Text(
+        text = label,
+        textAlign = TextAlign.Start,
+        fontSize = 16.sp,
+        color = Color.Red,
+        fontWeight = FontWeight.Bold,
+        fontStyle = FontStyle.Italic,
+        modifier = Modifier
+            .background(Color.White)
+            .padding(all = 6.dp)
+    )
+
+    Text(
+        text = value,
+        textAlign = TextAlign.Start,
+        fontSize = 16.sp,
+        color = Color.Black,
+        fontStyle = FontStyle.Italic,
+        modifier = Modifier
+            .background(Color.White)
+            .padding(all = 6.dp)
+    )
 }
 
 @Preview(showBackground = true)
